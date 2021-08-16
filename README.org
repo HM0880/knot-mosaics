@@ -1,0 +1,11 @@
+#+title:  Knot Mosaics README
+#+author: Hannah Miller
+
+Encode mosaic knots for a SAT solver.
+
+=make-sat.lisp= calls =main.lisp= to write the formula.  See the
+documentation in =make-sat.lisp= for details.  I use SBCL [1] to run
+=make-sat.lisp= and =BC_MINISAT_ALL= [2] to solve the CNF file.
+
+[1] http://www.sbcl.org/
+[2] https://www.disc.lab.uec.ac.jp/toda/code/bc_minisat_all.html
