@@ -26,6 +26,7 @@ solver that we have found is Toda's BDD-based ALLSAT solver [4].
 
 [1] H. Miller, "Enumerating Nontrivial Knot Mosaics with SAT (Student
     Abstract)", /AAAI/, vol. 36, no. 11, pp. 13017-13018, Jun. 2022.
+    https://doi.org/10.1609/aaai.v36i11.21645
 
 [2] https://pysathq.github.io/
 
