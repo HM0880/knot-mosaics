@@ -1,11 +1,30 @@
 #+title:  Knot Mosaics README
 #+author: Hannah Miller
 
-Encode mosaic knots for a SAT solver.
+* Intro
 
-=make-sat.lisp= calls =main.lisp= to write the formula.  See the
-documentation in =make-sat.lisp= for details.  I use SBCL [1] to run
-=make-sat.lisp= and =BC_MINISAT_ALL= [2] to solve the CNF file.
+Encode knot mosaics as a SAT formula and solve with a SAT solver.
 
-[1] http://www.sbcl.org/
-[2] https://www.disc.lab.uec.ac.jp/toda/code/bc_minisat_all.html
+Preliminary work is published at [1].
+
+
+* Files
+
+- [[./encode.py]] : Encode mosaic knots for a SAT solver.
+
+- [[./solve.py]] : Use PySAT bindings [2] to get all solutions of a knot
+  mosaic formula.
+
+
+* Other
+
+As of September 2022, for solving boards larger than 4x4, the best
+solver that we have found is Toda's BDD-based ALLSAT solver [3].
+
+
+* References
+
+[1] H. Miller, "Enumerating Nontrivial Knot Mosaics with SAT (Student
+Abstract)", /AAAI/, vol. 36, no. 11, pp. 13017-13018, Jun. 2022.  [2]
+https://github.com/pysathq/pysat [3]
+https://www.disc.lab.uec.ac.jp/toda/code/allsat.html
