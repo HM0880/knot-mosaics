@@ -1,5 +1,6 @@
 #+title:  Knot Mosaics README
 #+author: Hannah Miller
+#+date: Started November 2020
 
 * Intro
 
