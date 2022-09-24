@@ -1,4 +1,4 @@
-"""Use PySAT bindings [1] to get all solutions of a knot mosaic formula.
+"""Get all solutions of a knot mosaic SAT formula with PySAT bindings [1,2].
 
 To run:
   python3 solve.py <m> <n>
@@ -24,6 +24,7 @@ September 2022
 2022-04-23 (started)
 
 [1] https://pysathq.github.io/
+[2] https://github.com/pysathq/pysat
 
 """
 

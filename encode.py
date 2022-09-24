@@ -1,4 +1,4 @@
-"""Encode mosaic knots for a SAT solver.
+"""Encode knot mosaics as a SAT formula.
 
 To run:
   Basic    -- python3 encode.py <m> <n>
