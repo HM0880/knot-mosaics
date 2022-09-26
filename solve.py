@@ -84,7 +84,7 @@ def solve(solver_name, solver, formula):
 # Lingeling is 2nd slowest solver at ~5 seconds for full solve
 
 list_of_solvers = [
-    # solver name    PySAT solver object
+    # solver name, PySAT solver object
     ["Cadical", pysat.solvers.Cadical()],
     ["Gluecard3", pysat.solvers.Gluecard3()],
     ["Gluecard4", pysat.solvers.Gluecard4()],
