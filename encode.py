@@ -1,8 +1,8 @@
 """Encode knot mosaics as a SAT formula.
 
 To run:
-  Basic    -- python3 encode.py <m> <n>
-  Advanced -- python3 encode.py <m> <n> <AMO_method>
+  Basic    : python3 encode.py <m> <n>
+  Advanced : python3 encode.py <m> <n> <AMO_method>
 
 This file has utility functions (e.g., tup2var) and encodes the
 constraints (e.g., constraints for allowed tiles on the edges) to
@@ -160,18 +160,19 @@ def in_bounds(board, i, j):
 
 
 def tup2var(board, i, j, k):
-    """Given the board, a board location (i,j), and a tile k, if
-    (i,j) is within the board bounds, then compute the index v,
-    where v = (t)(in + j) + k + 1.
+    """Given the board and an (i,j,k) tuple, return the variable v.
+
+    Given the board, a board location (i,j), and a tile k, if (i,j)
+    is within the board bounds, then return the SAT variable v, where
+    v = (t)(in + j) + k + 1.  The `board` object has the values of t
+    and n (m is not needed).  As the final step, add 1 to convert from
+    a 0-indexed input to a 1-indexed output.
 
     The board position is 0-indexed; i.e., the upper left corner is the
     position (i,j) = (0,0).
 
-    As the final step, add 1 to convert from a 0-indexed input to a
-    1-indexed output.
-
-    # From the variable v, we can get i and j, so we can also easily
-    # get (i ± 1, j ± 1).
+    From the variable v, we can get i and j, so we can also easily get
+    (i ± 1, j ± 1) when needed.
 
     """
     if in_bounds(board, i, j):
@@ -179,8 +180,7 @@ def tup2var(board, i, j, k):
 
 
 def var2tup(board, v):
-    """Given the board, convert a variable v to its equivalent
-    (i,j,k) tuple.
+    """Given the board and a variable v, return the (i,j,k) tuple.
 
     As the first step, subtract 1 to convert from a 1-indexed input to a
     0-indexed output.  Also take the absolute value of v to handle
