@@ -1,8 +1,13 @@
 """Encode knot mosaics as a SAT formula.
 
 To run:
-  Basic    : python3 encode.py <m> <n>
-  Advanced : python3 encode.py <m> <n> <AMO_method>
+    python3 encode.py <m> <n> <AMO_method>
+
+  where
+    m is the number of rows in the board,
+    n is the number of columns in the board, and
+    AMO_method is the "at most one" encoding method (optional; default
+    is pairwise).
 
 This file has utility functions (e.g., tup2var) and encodes the
 constraints (e.g., constraints for allowed tiles on the edges) to
