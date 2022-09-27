@@ -47,7 +47,7 @@ import pysat.formula
 import pysat.solvers
 import sys
 
-import encode  # custom Python file to encode basic constraints
+import encode as utils  # custom Python file to encode basic constraints
 
 ################################################################
 
@@ -132,8 +132,8 @@ if __name__ == "__main__":
         mode = "c"  # default to "c" for counting
 
     # Make the board and encode the formula
-    board = encode.MakeBoard(m, n)
-    formula = encode.encode_basic_constraints_for_suitably_connected_knot(board)
+    board = utils.MakeBoard(m, n)
+    formula = utils.encode_basic_constraints_for_suitably_connected_knot(board)
 
     # Run per the requested mode
     if mode == "c":  # count satisfying assignments
