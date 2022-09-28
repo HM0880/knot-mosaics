@@ -1,5 +1,7 @@
 """Draw each knot as an array and save as a PNG image.
 
+(Make a subfolder ./knot-mosaic-images/ before running the script.)
+
 To run:
     python3 draw.py <m> <n> <logfile> <keep_about_this_many>
 
