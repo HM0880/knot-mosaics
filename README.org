@@ -6,31 +6,32 @@
 
 Encode knot mosaics as a SAT formula and solve with a SAT solver.
 
-Preliminary work is published at [1].
-
 
 * Files
 
 - [[./encode.py]] : Encode knot mosaics as a SAT formula.
 
 - [[./solve.py]] : Get all solutions of a knot mosaic SAT formula with
-  PySAT bindings [2,3].
+  PySAT bindings [1,2].
 
 
 * Other
 
 As of September 2022, for solving boards larger than 4x4, the best
-solver that we have found is Toda's BDD-based ALLSAT solver [4].
+solver that we have found is Toda's BDD-based ALLSAT solver [3].
+
+
+* My publications
+
+- H. Miller, "Enumerating Nontrivial Knot Mosaics with SAT (Student
+  Abstract)", /AAAI/, vol. 36, no. 11, pp. 13017-13018,
+  Jun. 2022. https://doi.org/10.1609/aaai.v36i11.21645
 
 
 * References
 
-[1] H. Miller, "Enumerating Nontrivial Knot Mosaics with SAT (Student
-    Abstract)", /AAAI/, vol. 36, no. 11, pp. 13017-13018, Jun. 2022.
-    https://doi.org/10.1609/aaai.v36i11.21645
+[1] https://pysathq.github.io/
 
-[2] https://pysathq.github.io/
+[2] https://github.com/pysathq/pysat
 
-[3] https://github.com/pysathq/pysat
-
-[4] https://www.disc.lab.uec.ac.jp/toda/code/allsat.html
+[3] https://www.disc.lab.uec.ac.jp/toda/code/allsat.html
