@@ -479,10 +479,10 @@ def encode_basic_constraints_for_suitably_connected_knot(board, AMO_method="pair
 if __name__ == "__main__":
     # Get command line arguments A
     A = sys.argv
-    m = sys.argv[1]
-    n = sys.argv[2]
+    m = A[1]
+    n = A[2]
     try:
-        AMO_method = sys.argv[3]
+        AMO_method = A[3]
     except:
         AMO_method = "pairwise"
 

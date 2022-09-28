@@ -87,6 +87,7 @@ def draw_one_solution(board, line, tiles, save_root, make_plot=True):
         plt.tight_layout(pad=0.3, w_pad=0.0, h_pad=1.0)
         plt.savefig(filename)
         plt.close()
+        print(f"saved to {filename}")
 
 
 def process_logfile(m, n, logfile, keep_about_this_many, save_root):
@@ -112,11 +113,15 @@ def process_logfile(m, n, logfile, keep_about_this_many, save_root):
 if __name__ == "__main__":
     # Get command line arguments A
     A = sys.argv
-    m = int(sys.argv[1])
-    n = int(sys.argv[2])
-    logfile = sys.argv[3]
-    keep_about_this_many = int(sys.argv[4])
+    m = int(A[1])
+    n = int(A[2])
+    logfile = A[3]
+    keep_about_this_many = int(A[4])
 
     process_logfile(
-        m, n, logfile, keep_about_this_many, save_root="./knot-mosaic-images/"
+        m,
+        n,
+        logfile,
+        keep_about_this_many,
+        save_root="./knot-mosaic-images/",
     )
