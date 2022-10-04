@@ -16,7 +16,7 @@ For example, for a 5x3 board to draw ~20 knots, the command is
     python3 draw.py 5 3 5x3.log 20
 
 Hannah Miller
-https://hm0880.github.io/
+https://HM0880.github.io/
 September 2022
 
 """

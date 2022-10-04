@@ -14,7 +14,7 @@ constraints (e.g., constraints for allowed tiles on the edges) to
 encode a suitably connected knot.
 
 Hannah Miller
-https://hm0880.github.io/
+https://HM0880.github.io/
 September 2022
 
 """
@@ -51,10 +51,14 @@ class MakeBoard:
     def get_largest_variable(self):
         """Return the largest variable (by absolute value) in the formula."""
         largest_var = 0  # initialize
+
+        # !WORK! 2022-09-28 -- see if PySAT supports a better way to
+        # get largest value and to add comments
         for clause in self.formula:
             for entry in clause:
                 if abs(entry) > largest_var:
                     largest_var = abs(entry)
+
         return largest_var
 
     def prepend_dimacs_file_header_info(self, AMO_method):
