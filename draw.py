@@ -11,6 +11,8 @@ To run:
     logfile is the path to the log file written by solve.py, and
     keep_about_this_many is the approximate number of randomly chosen
     knots to draw.
+      If keep_about_this_many is not provided, all of the knots in the
+      log file will be drawn.
 
 For example, for a 5x3 board to draw ~20 knots, the command is
     python3 draw.py 5 3 5x3.log 20
@@ -89,12 +91,13 @@ def draw_one_solution(board, line, tiles, save_root, make_plot=True):
         plt.tight_layout(pad=0.3, w_pad=0.0, h_pad=1.0)
         plt.savefig(filename)
         plt.close()
-        print(f"saved to {filename}")
+        print(f"saved to {os.path.abspath(filename)}")
 
 
 def process_logfile(m, n, logfile, keep_about_this_many, save_root):
     tiles = read_tiles()
     board = utils.MakeBoard(m, n)
+    os.makedirs(save_root, exist_ok=True)  # make the `save_root` folder
 
     num_lines = 0
     with open(logfile) as f:
@@ -118,7 +121,10 @@ if __name__ == "__main__":
     m = int(A[1])
     n = int(A[2])
     logfile = A[3]
-    keep_about_this_many = int(A[4])
+    try:
+        keep_about_this_many = int(A[4])
+    except:
+        keep_about_this_many = np.inf
 
     process_logfile(
         m,
